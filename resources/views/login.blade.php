@@ -13,6 +13,11 @@
         @error('error')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
+        @if (session('status'))
+        <div class="alert alert-success">
+            {{ session('status') }}
+        </div>
+        @endif
         <div class="flex justify-center">
             <div class="col-sm-2 mb-3">
                 <label for="email">Email</label>
@@ -28,7 +33,7 @@
                 <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>             
-            <button type="submit" class="btn-primary">Login</button>
+            <button type="submit" class="btn btn-primary">Login</button>
         </div>             
     </form>
 </body>

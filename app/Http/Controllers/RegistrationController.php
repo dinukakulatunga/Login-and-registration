@@ -30,7 +30,7 @@ class RegistrationController extends Controller
             ],            
             'password' => [
                 'required',
-                Password::min(5)->numbers()->symbols()
+                Password::min(5)->numbers()
             ],
         ]);
 
@@ -42,7 +42,7 @@ class RegistrationController extends Controller
 
         $user->save();
 
-        return redirect('/login');
+        return redirect('/login')->with('status', 'User Registration completed');
 
     }
 
